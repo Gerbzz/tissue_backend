@@ -1,7 +1,7 @@
 // Neil Gerbe
 
 var http = require('http');
-var issue_manager = require("issue-manager");
+var issue_manager = require('issue-manager');
 
 //  createServer function makes a server with the http protocol
 http.createServer(function (req,res) {

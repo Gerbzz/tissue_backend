@@ -1,13 +1,14 @@
 {
-  "name": "tissue_backend",
+  "name": "serverExpress",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "serverExpress.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node serverExpress",
+    "dev": "nodemon serverExpress"
   },
   "keywords": [],
-  "author": "",
+  "author": "Neil Gerbe",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -16,5 +17,8 @@
     "issue-manager": "file:issue-manager/lib/issue-manager-1.0.0.tgz",
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
   }
 }
