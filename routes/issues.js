@@ -7,7 +7,10 @@ var issue_manager = require('issue-manager');
 // GET method route 
 router.get('/issues', function (req, res) { // GET request
   var issues = issue_manager.issues();
-  res.send(JSON.stringify(issues));
+  res.json(issues)
+
+  // res.send(JSON.stringify(issues));
+
 })
 
 // PUT method route
@@ -16,10 +19,11 @@ router.put('/issues/issues.json', function (req, res) { // PUT request
   req.on('data', (chunk) => {
     issueReq += chunk;
   });
-  req.on('end',() => {
-    issueReq = JSON.parse(issueReq);  
-    var issueObj = issue_manager.create_issue(issueReq.Id, issueReq.Title,issueReq.Status,issueReq.Assignee,issueReq.Created,issueReq.Updated,issueReq.Details);
+  req.on('end', () => {
+    issueReq = JSON.parse(issueReq);
+    var issueObj = issue_manager.create_issue(issueReq.id, issueReq.title, issueReq.status, issueReq.assignee, issueReq.created, issueReq.updated, issueReq.details);
     res.send(issueObj); //PUT to the issueObj
+
   });
 })
 
@@ -29,18 +33,28 @@ router.post('/issues/:issue_id.json', function (req, res) {
   req.on('data', (chunk) => {
     issueReq += chunk;
   });
-  req.on('end',() => {
+  req.on('end', () => {
     issueReq = JSON.parse(issueReq);
-    var issueObj = issue_manager.updateIssue(issueReq.Id, issueReq.Title,issueReq.Status,issueReq.Asignee,issueReq.Created,issueReq.Updated, issueReq.Details)
+    var issueObj = issue_manager.update_issue(issueReq.id, issueReq.title, issueReq.status, issueReq.assignee, issueReq.created, issueReq.updated, issueReq.details)
     res.send(issueObj); //POST request to the issues page
   });
-  
+
 })
 
 // DELETE method route
 router.delete('/issues/:issue_id.json', function (req, res) {
-  res.send('ok') //DELETE request to the issues page
-})
-// splyce out of the array - terrys tip
+  var issueReq = '';
+  req.on('data', (chunk) => {
+    issueReq += chunk;
+  });
+  req.on('end', () => {
+    issueReq = JSON.parse(issueReq);
+    var issueObj = issue_manager.delete_issue(issueReq.id)
+    res.send(issueObj); //sends res to the issues page to delete the user
+  });
+  //DELETE request to the issues page
+});
+
+
 // export issues.js
 module.exports = router

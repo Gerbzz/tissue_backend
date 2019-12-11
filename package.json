@@ -1,11 +1,11 @@
 {
-  "name": "serverExpress",
+  "name": "tissue_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "serverExpress.js",
+  "main": "/app/server.js",
   "scripts": {
-    "start": "node serverExpress",
-    "dev": "nodemon serverExpress"
+    "start": "node app/server",
+    "dev": "nodemon app/server"
   },
   "keywords": [],
   "author": "Neil Gerbe",

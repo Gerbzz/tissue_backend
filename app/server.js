@@ -1,23 +1,25 @@
 // Neil Gerbe
 
-var http = require('http');
-var issue_manager = require('issue-manager');
+// init express
+var express = require('express')
+var app = express()
+//init mongoDB
+var MongoClient = require('mongodb').MongoClient
 
-//  createServer function makes a server with the http protocol
-http.createServer(function (req,res) {
-    if(req.method == 'GET') {
-        var issues = JSON.stringify(issue_manager.issues()); //get request
-        res.end(issues);
-    }
-    else if(req.method == 'POST') { //post request
-        var issueReq = '';
-        req.on('data', (chunk) => {
-            issueReq += chunk;
-        });
-        req.on('end',() => {    
-            issueReq = JSON.parse(issueReq);
-            var issueObj = issue_manager.create_issue(issueReq.Id, issueReq.Title,issueReq.Status,issueReq.Asignee,issueReq.Created,issueReq.Updated, issueReq.Details);
-            res.end(issueObj); //end to send the issueObj
-        });
-    }
-}).listen(3000); // now listening on port 
+
+
+// import my routes
+var issues = require('../routes/issues')
+var users = require('../routes/users')
+
+// import my handlers
+app.use('/', issues)
+app.use(' /', users)
+
+
+
+// Connect database and start server
+MongoClient.connect('mongodb+srv://admin:<admin123>@tissue-ifolj.mongodb.net/test?retryWrites=true&w=majority', (err, database) => {
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+})
