@@ -19,6 +19,5 @@ app.use('/users', users)
 
 
 // Connect database and start server
-
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
