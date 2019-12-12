@@ -1,11 +1,37 @@
 {
-  "name": "user-manager",
-  "version": "1.0.0",
+  "_from": "file:user-manager\\user-manager-1.0.0.tgz",
+  "_id": "user-manager@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-k8i8OJfvskbD8lu83sWe6M53HdpLfyOkZrxpb5Zbo8LaHOYwFB1wUQDB7Tg0jr7PDyvit0/INn+wcuPChvA2Hw==",
+  "_location": "/user-manager",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "C:\\Users\\Student\\Desktop\\tissue_backend",
+    "raw": ".\\user-manager\\user-manager-1.0.0.tgz",
+    "rawSpec": ".\\user-manager\\user-manager-1.0.0.tgz",
+    "saveSpec": "file:user-manager\\user-manager-1.0.0.tgz",
+    "fetchSpec": "C:\\Users\\Student\\Desktop\\tissue_backend\\user-manager\\user-manager-1.0.0.tgz"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "C:\\Users\\Student\\Desktop\\tissue_backend\\user-manager\\user-manager-1.0.0.tgz",
+  "_shasum": "f7d7ab18b4e7cf600a2b96a83a364fac5ec5b10f",
+  "_spec": ".\\user-manager\\user-manager-1.0.0.tgz",
+  "_where": "C:\\Users\\Student\\Desktop\\tissue_backend",
+  "author": {
+    "name": "Neil Gerbe"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "For managing users",
+  "license": "ISC",
   "main": "user.js",
+  "name": "user-manager",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Neil Gerbe",
-  "license": "ISC"
+  "version": "1.0.0"
 }
