@@ -1,0 +1,11 @@
+{
+  "name": "user-manager",
+  "version": "1.0.0",
+  "description": "For managing users",
+  "main": "user.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Neil Gerbe",
+  "license": "ISC"
+}

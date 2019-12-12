@@ -16,7 +16,8 @@
     "express": "^4.17.1",
     "issue-manager": "file:issue-manager/lib/issue-manager-1.0.0.tgz",
     "mongodb": "^3.3.4",
-    "mongoose": "^5.7.11"
+    "mongoose": "^5.7.11",
+    "user-manager": "file:user-manager/user-manager-1.0.0.tgz"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"

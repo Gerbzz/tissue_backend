@@ -4,8 +4,9 @@ var router = express.Router()
 var issue_manager = require('issue-manager');
 issue_manager.connectToTissueData();
 
-// GET method route 
-// GET method route 
+/////////////// GET method route ////////////////////////
+/////////////////////////////////////////////////////////
+
 // GET method route 
 router.get('/issues', function (req, res) { // GET request
   var issues = issue_manager.issues();
@@ -14,10 +15,9 @@ router.get('/issues', function (req, res) { // GET request
   res.json(issues)
 })
 
+/////////////// PUT method route ////////////////////////
+/////////////////////////////////////////////////////////
 
-// PUT method route
-// PUT method route
-// PUT method route
 router.put('/issues/issues.json', function (req, res) { // PUT request
   var issueReq = '';
   req.on('data', (chunk) => {
@@ -32,9 +32,9 @@ router.put('/issues/issues.json', function (req, res) { // PUT request
   });
 })
 
-// POST method route
-// POST method route
-// POST method route
+/////////////// POST method route ////////////////////////
+/////////////////////////////////////////////////////////
+
 router.post('/issues/issue_id.json', function (req, res) {
   var issueReq = '';
   req.on('data', (chunk) => {
@@ -47,14 +47,12 @@ router.post('/issues/issue_id.json', function (req, res) {
     
     // respond
     console.log("Issue " + issueReq.id + " was updated");
-	  
     res.send(issueObj); //POST request to the issues page
   });
 })
 
-// DELETE method route
-// DELETE method route
-// DELETE method route
+/////////////// DELETE method route ////////////////////////
+/////////////////////////////////////////////////////////
 router.delete('/issues/issue_id.json', function (req, res) {
   var issueReq = '';
   req.on('data', (chunk) => {

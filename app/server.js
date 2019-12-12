@@ -14,7 +14,7 @@ var users = require('../routes/users')
 
 // import my handlers
 app.use('/', issues)
-app.use(' /', users)
+app.use('/users', users)
 
 
 
