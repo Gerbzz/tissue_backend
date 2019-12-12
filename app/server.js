@@ -14,10 +14,11 @@ var users = require('../routes/users')
 
 // import my handlers
 app.use('/', issues)
-app.use('/users', users)
+app.use('/', users)
 
 
 
 // Connect database and start server
+
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
